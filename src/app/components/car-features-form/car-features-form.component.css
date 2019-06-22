@@ -1,0 +1,53 @@
+.features-section {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../../assets/videos/mercedes.mp4");
+    background-color: #dde8f1;
+}
+
+.submit-span {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+select, option {
+    width: 90%;
+}
+
+#make-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 60%;
+}
+
+#submit {
+    width: 40%;
+}
+
+.make-top, .make-bottom {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.make-top-make {
+    display: flex;
+    flex-direction: column;
+}
+
+#min-price {
+    margin-right: 5px;
+}
+
+.make-top-select {
+    display: flex;
+}
+
+.make-top-make, .make-top-price, .make-bottom-color, .make-bottom-condition {
+    width: 50%;
+}

@@ -36,4 +36,4 @@ A simple car classified site with Angular
 7. [ ] A user should be able to view all cars.
 
 ### Live url
-Coming soon!c
+Coming soon!

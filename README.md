@@ -6,7 +6,7 @@ A simple car classified site with Angular
 - Nodejs
 - any browser
 
-### Installations(Linux)
+### Instructions(Linux)
 1. Run the following commands to install Nodejs.
 ```
     a) sudo apt-get install curl python-software-properties
@@ -15,6 +15,12 @@ A simple car classified site with Angular
     d) curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     e) sudo apt-get install nodejs
 ```
+
+2. Install Angular/CLI
+```
+    sudo npm install -g @angular/cli
+```
+
 2. Clone this repository
 ```
     git clone https://github.com/Dave-mash/angular-blog-ui.git
@@ -23,7 +29,7 @@ A simple car classified site with Angular
 ```
     a) cd angular-blog-ui
     b) npm install
-    c) ng serve
+    c) ng serve(run `npm test` to test)
 ```
 
 ### Features

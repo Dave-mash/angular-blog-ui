@@ -33,13 +33,13 @@ A simple car classified site with Angular
 ```
 
 ### Features
-1. [ ] A user should be able to create an account and log in.
-2. [ ] A vendor(admin) should be able to create an account and log in.
-3. [ ] A user(buyer) should be able to select a car type.
-4. [ ] A user should be able to visualize featured vehicles on a slider.
-5. [ ] A user should be able to checkout on a purchase(s).
-6. [ ] A vendor(admin) should be able to input car features and image.
-7. [ ] A user should be able to view all cars.
+- [ ] A user should be able to create an account and log in.
+- [ ] A vendor(admin) should be able to create an account and log in.
+- [ ] A user(buyer) should be able to select a car type.
+- [x] A user should be able to visualize featured vehicles on a slider.
+- [ ] A user should be able to checkout on a purchase(s).
+- [ ] A vendor(admin) should be able to input car features and image.
+- [x] A user should be able to view all cars.
 
 ### Live url
 Coming soon!

@@ -4,3 +4,29 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.search-div {
+    width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    width: 55%;
+}
+
+.search-span {
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search-span form {
+    display: flex;
+    width: 35%;
+    justify-content: space-around;
+}
+
+select {
+    width: 70%;
+}
+

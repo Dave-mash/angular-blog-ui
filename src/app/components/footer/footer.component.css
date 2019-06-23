@@ -3,4 +3,6 @@ footer {
     color: #ccc;
     height: 100px;
     margin-top: 50px;
+    text-align: center;
+    padding-top: 20px;
 }

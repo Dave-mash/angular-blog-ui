@@ -21,11 +21,11 @@ A simple car classified site with Angular
     sudo npm install -g @angular/cli
 ```
 
-2. Clone this repository
+3. Clone this repository
 ```
     git clone https://github.com/Dave-mash/angular-blog-ui.git
 ```
-3. Install dependencies and serve
+4. Install dependencies and serve
 ```
     a) cd angular-blog-ui
     b) npm install

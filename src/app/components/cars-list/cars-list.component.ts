@@ -46,6 +46,7 @@ export class CarsListComponent implements OnInit {
   get listFilter(): string {
     return this._listFilter;
   }
+
   set listFilter(value: string) {
     this._listFilter = value;
     this.filteredCars = this.listFilter ? this.performFilter(this.listFilter) : this.cars;
@@ -53,7 +54,7 @@ export class CarsListComponent implements OnInit {
 
   constructor() {
     this.filteredCars = this.cars;
-    this.listFilter = 'Toyota';
+    this.listFilter = '';
   }
 
   performFilter(filterBy: string): ICar[] {

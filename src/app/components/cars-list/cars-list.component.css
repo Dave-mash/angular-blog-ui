@@ -32,5 +32,15 @@ select {
 
 .cars-list-container {
     padding-top: 100px;
+}
 
+.col-md-6 {
+    cursor: pointer;
+}
+
+.no-results {
+    text-align: center;
+    margin-top: 50px;
+    opacity: .6;
+    display: none;
 }

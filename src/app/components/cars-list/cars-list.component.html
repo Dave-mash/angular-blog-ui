@@ -1,7 +1,8 @@
 <div>
     <router-outlet></router-outlet>
     <app-nav-bar></app-nav-bar>
-    <div class="cars-list-container">
+    <div class="cars-list-container"
+        [style.height]="!filteredCars.length ? '72vh' : 'auto'">
         <div class="search-div">
             <span class="search-span">
                 <input
@@ -24,6 +25,8 @@
         </div>
         <div class="cars-list"
             *ngIf='cars && cars.length'>
+            <div class="no-results"
+            [style.display]="!filteredCars.length ? 'block' : 'none'"><h2>No results</h2></div>
             <div class="container py-3"
                 *ngFor='let car of filteredCars'>
                 <div class="card">

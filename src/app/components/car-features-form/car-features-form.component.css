@@ -5,6 +5,7 @@
     align-items: center;
     background-image: url("../../../assets/videos/mercedes.mp4");
     background-color: #dde8f1;
+    padding-top: 100px;
 }
 
 .submit-span {

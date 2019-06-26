@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ICar } from './car';
 
 @Component({
-  selector: 'app-cars-list',
   templateUrl: './cars-list.component.html',
   styleUrls: ['./cars-list.component.css']
 })
 export class CarsListComponent implements OnInit {
-  pageTitle: string = 'Cars List';
   cars: ICar[] = [
     {
       "make": "Toyota",
@@ -45,11 +43,13 @@ export class CarsListComponent implements OnInit {
   _listFilter: string;
   get listFilter(): string {
     return this._listFilter;
+    console.log(this.filteredCars);
   }
 
   set listFilter(value: string) {
     this._listFilter = value;
     this.filteredCars = this.listFilter ? this.performFilter(this.listFilter) : this.cars;
+    if (!this.filteredCars) console.log('empty');
   }
 
   constructor() {

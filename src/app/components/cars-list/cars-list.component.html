@@ -1,60 +1,65 @@
 <div>
-    <h2>{{ pageTitle }}</h2>
-    <div class="search-div">
-        <span class="search-span">
-            <input
-                type="text"
-                class="form-control"
-                id="car-search"
-                [(ngModel)]="listFilter"
-                placeholder="Search for a car...">
-            <form>
-                <label for="filter-by">Sort By </label>
-                <select name="filter-by" id="filter-by" class="form-control form-control-sm">
-                    <option value="make">Make</option>
-                    <option value="model">Model</option>
-                    <option value="max-price">Highest Price</option>
-                    <option value="min-price">Lowest Price</option>
-                    <option value="rating">Popular</option>
-                </select>
-            </form>
-        </span>
-    </div>
-    <div class="cars-list"
-        *ngIf='cars && cars.length'>
-        <div class="container py-3"
-            *ngFor='let car of filteredCars'>
-            <div class="card">
-            <div class="row ">
-                <div class="col-md-6">
-                    <img src="../../../assets/images/{{ car.thumbnail }}" class="w-100">
-                </div>
-                <div class="col-md-6 px-3">
-                    <div class="card-block px-3">
-                        <span class="car-make">
-                            <h3>{{ car.make }}, {{ car.model }}</h3>
-                        </span>
-                        <span class="description">
-                            <p>{{ car.description }}</p>
-                        </span>
-                        <span class="car-color">
-                            <b>Color: </b>{{ car.color }}
-                        </span>
-                        <span class="car-condition">
-                            <b>Condition: </b>{{ car.condition }}
-                        </span>
-                        <span class="rating">
-                            <b>Rating: </b>{{ car.rating }}
-                        </span>
-                        <span class="car-price">
-                            <b>Price: </b>{{ car.price | currency:'KSH':symbol:'1.2-2' }}
-                        </span><br>
-                        <button class="purchase-car btn btn-primary">Get Car</button>
+    <router-outlet></router-outlet>
+    <app-nav-bar></app-nav-bar>
+    <div class="cars-list-container">
+        <div class="search-div">
+            <span class="search-span">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="car-search"
+                    [(ngModel)]="listFilter"
+                    placeholder="Search for a car...">
+                <form>
+                    <label for="filter-by">Sort By </label>
+                    <select name="filter-by" id="filter-by" class="form-control form-control-sm">
+                        <option value="make">Make</option>
+                        <option value="model">Model</option>
+                        <option value="max-price">Highest Price</option>
+                        <option value="min-price">Lowest Price</option>
+                        <option value="rating">Popular</option>
+                    </select>
+                </form>
+            </span>
+        </div>
+        <div class="cars-list"
+            *ngIf='cars && cars.length'>
+            <div class="container py-3"
+                *ngFor='let car of filteredCars'>
+                <div class="card">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <img src="../../../assets/images/{{ car.thumbnail }}" class="w-100">
                     </div>
-                </div>
-        
+                    <div class="col-md-6 px-3">
+                        <div class="card-block px-3">
+                            <span class="car-make">
+                                <h3>{{ car.make }}, {{ car.model }}</h3>
+                            </span>
+                            <span class="description">
+                                <p>{{ car.description }}</p>
+                            </span>
+                            <span class="car-color">
+                                <b>Color: </b>{{ car.color }}
+                            </span>
+                            <span class="car-condition">
+                                <b>Condition: </b>{{ car.condition }}
+                            </span>
+                            <span class="rating">
+                                <b>Rating: </b>{{ car.rating }}
+                            </span>
+                            <span class="car-price">
+                                <b>Price: </b>{{ car.price | currency:'KSH':symbol:'1.2-2' }}
+                            </span><br>
+                            <button class="purchase-car btn btn-primary">Get Car</button>
+                        </div>
+                    </div>
+            
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <app-footer></app-footer>
+
 </div>

@@ -6,29 +6,26 @@
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#" routerLink="/welcome">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" routerLink="/about">About Us</a>
             </li>
         </ul>
         <div class="mid">
-            <button type="button" class="btn btn-outline-light">SELL CAR</button>
-            <button type="button" class="btn btn-success">All CARS</button>
+            <a routerLink="/sell"><button type="button" class="btn btn-outline-light">SELL CAR</button></a>
+            <a routerLink="/all-cars"><button type="button" class="btn btn-success">All CARS</button></a>
         </div>
         <span class="navbar-text">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" routerLink="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Signup</a>
+                    <a class="nav-link" routerLink="/signup">Signup</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dealer Signup</a>
+                    <a class="nav-link" routerLink="/admin-login">Dealer Login</a>
                 </li>
             </ul>
         </span>

@@ -1,0 +1,12 @@
+.about-user-container {
+    padding-top: 150px;
+    margin: 0 auto;
+    width: 50%;
+    height: 72vh;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+}

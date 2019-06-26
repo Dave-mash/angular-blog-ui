@@ -1,4 +1,59 @@
 .sell-container {
-    height: 72vh;
+    height: auto;
     padding-top: 100px;
+    opacity: .9;
+}
+
+.submit-span {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+select, option {
+    width: 90%;
+}
+
+#make-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+}
+
+#submit {
+    width: 40%;
+}
+
+.make-top, .make-bottom {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.make-bottom {
+
+}
+
+.make-top-make {
+    display: flex;
+    flex-direction: column;
+}
+
+#min-price {
+    margin-right: 5px;
+}
+
+.make-top-select {
+    display: flex;
+}
+
+.make-top-make, .make-top-price, .make-bottom-color, .make-bottom-condition {
+    width: 45%;
+}
+
+input {
+    margin-right: 20px;
 }

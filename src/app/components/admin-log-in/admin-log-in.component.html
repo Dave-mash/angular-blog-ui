@@ -2,9 +2,24 @@
   <router-outlet></router-outlet>
   <app-nav-bar></app-nav-bar>
   <div class="admin-container">
-    <p>
-      admin-log-in works!
-    </p>
+    <form class="simple-login-container">
+      <h2>Log In</h2>
+      <div class="row">
+          <div class="col-md-12 form-group">
+              <input type="email" class="form-control" placeholder="Admin Email">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 form-group">
+              <input type="password" placeholder="Enter your Password" class="form-control">
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 form-group">
+              <input type="submit" class="btn btn-block btn-login bg-primary" placeholder="Enter your Password" >
+          </div>
+      </div>
+    </form>
   </div>
   <app-footer></app-footer>
 

@@ -18,6 +18,11 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { AdminLogInComponent } from './components/admin-log-in/admin-log-in.component';
 import { SellCarComponent } from './components/sell-car/sell-car.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { AdminCarsComponent } from './components/admin-cars/admin-cars.component';
+import { AdminSoldCarsComponent } from './components/admin-sold-cars/admin-sold-cars.component';
+import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { SellCarComponent } from './components/sell-car/sell-car.component';
     SignUpComponent,
     LogInComponent,
     AdminLogInComponent,
-    SellCarComponent
+    SellCarComponent,
+    AdminPageComponent,
+    AdminProfileComponent,
+    AdminCarsComponent,
+    AdminSoldCarsComponent,
+    AdminNavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -42,13 +52,17 @@ import { SellCarComponent } from './components/sell-car/sell-car.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'all-cars', component: CarsListComponent },
-      { path: 'car', component: CarDetailsComponent },
+      { path: 'all-cars/:id', component: CarDetailsComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'about', component: AboutUsComponent },
       { path: 'signup', component: SignUpComponent },
       { path: 'login', component: LogInComponent },
       { path: 'sell', component: SellCarComponent },
       { path: 'admin-login', component: AdminLogInComponent },
+      { path: 'admin', component: AdminProfileComponent },
+      // { path: 'admin/profile', component: AdminProfileComponent },
+      { path: 'my-cars', component: AdminCarsComponent },
+      { path: 'sold-cars', component: AdminSoldCarsComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
     ],

@@ -43,13 +43,33 @@ export class CarsListComponent implements OnInit {
   _listFilter: string;
   get listFilter(): string {
     return this._listFilter;
-    console.log(this.filteredCars);
   }
 
   set listFilter(value: string) {
     this._listFilter = value;
     this.filteredCars = this.listFilter ? this.performFilter(this.listFilter) : this.cars;
     if (!this.filteredCars) console.log('empty');
+  }
+
+  set sortBy(value: string) {
+    console.log(value);
+    switch (value) {
+      case 'make':
+        this.sortByLetters(this.cars, 'make');
+        break;
+      case 'model':
+        this.sortByLetters(this.cars, 'model');        
+        break;
+      case 'max-price':
+        this.cars.sort((a, b) => b.price - a.price);
+        break;
+      case 'min-price':
+        this.cars.sort((a, b) => a.price - b.price);
+        break;
+      case 'rating':
+        this.cars.sort((a, b) => b.rating - a.rating);
+        break;
+    }
   }
 
   constructor() {
@@ -62,6 +82,17 @@ export class CarsListComponent implements OnInit {
     return this.cars.filter((car: ICar) => 
       car.make.toLocaleLowerCase().indexOf(filterBy) !== -1
     );
+  }
+
+  sortByLetters(arr: any[], value: string) {
+    arr.sort((a, b) => {
+      let nameA = value === 'make' ? a.make.toUpperCase() : a.model.toUpperCase();
+      let nameB = value === 'make' ? b.make.toUpperCase() : b.model.toUpperCase();
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+    
+      return 0;
+    });
   }
 
   ngOnInit() {

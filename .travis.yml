@@ -9,6 +9,13 @@ branches:
   only:
   - master
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
 install:
   - npm install
 
@@ -16,4 +23,4 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - npm run test
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox

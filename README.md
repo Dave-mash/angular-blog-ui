@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Dave-mash/angular-blog-ui.svg?branch=master)](https://travis-ci.org/Dave-mash/angular-blog-ui)
+
 ## Angular Blog UI
 A simple car classified site with Angular
 

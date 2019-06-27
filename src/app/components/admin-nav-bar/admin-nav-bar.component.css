@@ -1,0 +1,47 @@
+.admin-nav {
+    padding-top: 100px;
+    height: 22vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-mini-nav {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: space-between;
+    /* align-items: left; */
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    opacity: .9;
+}
+
+.active {
+    border-bottom: 1px solid green;
+}
+
+a {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    flex: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.admin-sub-container {
+    height: 40vh;
+    /* background: green; */
+}

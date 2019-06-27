@@ -3,8 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../../assets/videos/mercedes.mp4");
-    background-color: #dde8f1;
+    background-image: url("../../../assets/images/asphalt.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .9;
     padding-top: 100px;
 }
 

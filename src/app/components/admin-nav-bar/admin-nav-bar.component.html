@@ -1,0 +1,7 @@
+<nav class="admin-nav">
+  <ul class="admin-mini-nav">
+    <li class="my-cars" [style.border-bottom]="getStyle()"><a routerLink="/my-cars" (click)="showStyle = !showStyle;">My Cars</a></li>
+    <li class="sold" [style.border-bottom]="getStyle()"><a routerLink="/sold-cars" (click)="showStyle = !showStyle;">Sold Cars</a></li>
+    <li class="profile" [style.border-bottom]="getStyle()"><a routerLink="/admin" (click)="showStyle = !showStyle;">Profile</a></li>
+  </ul>
+</nav>

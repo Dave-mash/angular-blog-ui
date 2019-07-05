@@ -1,13 +1,9 @@
 dist: trusty
-sudo: required
+sudo: false
 
 language: node_js
 node_js:
   - '10'
-
-branches:
-  only:
-  - master
 
 addons:
   apt:
@@ -16,11 +12,12 @@ addons:
     packages:
       - google-chrome-stable
 
+cache:
+  directories:
+    - ./node_modules
+
 install:
   - npm install
-
-before_script:
-  - npm install -g @angular/cli
 
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox

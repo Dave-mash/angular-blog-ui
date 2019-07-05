@@ -1,9 +1,11 @@
 [![Build Status](https://travis-ci.org/Dave-mash/angular-blog-ui.svg?branch=master)](https://travis-ci.org/Dave-mash/angular-blog-ui)
 
 ## Angular Blog UI
+
 A simple car classified site with Angular
 
 ### Prerequisites
+
 - Angular 8
 - Nodejs
 - any browser
@@ -19,15 +21,19 @@ A simple car classified site with Angular
 ```
 
 2. Install Angular/CLI
+
 ```
     sudo npm install -g @angular/cli
 ```
 
 3. Clone this repository
+
 ```
     git clone https://github.com/Dave-mash/angular-blog-ui.git
 ```
+
 4. Install dependencies and serve
+
 ```
     a) cd angular-blog-ui
     b) npm install
@@ -35,6 +41,7 @@ A simple car classified site with Angular
 ```
 
 ### Features
+
 - [x] A user should be able to create an account and log in.
 - [x] A vendor(admin) should be able to create an account and log in.
 - [ ] A user(buyer) should be able to select a car type and view details.

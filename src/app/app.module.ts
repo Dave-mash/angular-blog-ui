@@ -19,10 +19,10 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { AdminLogInComponent } from './components/admin-log-in/admin-log-in.component';
 import { SellCarComponent } from './components/sell-car/sell-car.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
-import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 import { AdminCarsComponent } from './components/admin-cars/admin-cars.component';
 import { AdminSoldCarsComponent } from './components/admin-sold-cars/admin-sold-cars.component';
 import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.component';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +41,10 @@ import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.c
     AdminLogInComponent,
     SellCarComponent,
     AdminPageComponent,
-    AdminProfileComponent,
     AdminCarsComponent,
     AdminSoldCarsComponent,
-    AdminNavBarComponent
+    AdminNavBarComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
@@ -59,8 +59,8 @@ import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.c
       { path: 'login', component: LogInComponent },
       { path: 'sell', component: SellCarComponent },
       { path: 'admin-login', component: AdminLogInComponent },
-      { path: 'admin', component: AdminProfileComponent },
-      // { path: 'admin/profile', component: AdminProfileComponent },
+      { path: 'admin', component: AdminPageComponent },
+      { path: 'profile', component: ProfilePageComponent },
       { path: 'my-cars', component: AdminCarsComponent },
       { path: 'sold-cars', component: AdminSoldCarsComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },

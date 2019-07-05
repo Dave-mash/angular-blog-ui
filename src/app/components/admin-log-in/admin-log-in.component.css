@@ -1,6 +1,9 @@
 .admin-container {
     height: 72vh;
-    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .simple-login-container{
     max-width: 100%;

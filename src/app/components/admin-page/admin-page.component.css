@@ -1,4 +1,8 @@
 .admin-page-container {
     padding-top: 100px;
     height: 72vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
 }

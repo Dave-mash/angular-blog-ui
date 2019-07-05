@@ -1,0 +1,38 @@
+<div>
+  <router-outlet></router-outlet>
+  <app-nav-bar></app-nav-bar>
+  <div class="profile-page-content">
+    <div class="card mb-3">
+      <img class="card-img-top" src="../../../assets/images/andela.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Update your details</h5>
+        <p>Change profile picture</p>
+        <input type="file">
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <input class="form-control" type="text" placeholder="First name">
+        </li>
+        <li class="list-group-item">
+          <input class="form-control" type="text" placeholder="Last name">
+        </li>
+        <li class="list-group-item">
+          <input class="form-control" type="text" placeholder="Username">
+        </li>
+        <li class="list-group-item">
+          <input class="form-control" type="email" placeholder="Email">
+        </li>
+        <li class="list-group-item">
+          <input class="form-control" type="number" placeholder="Phone number">
+        </li>
+        <li class="list-group-item">
+          <input class="form-control" type="password" placeholder="Password">
+        </li>
+        <li class="list-group-item">
+          <button type="button" class="btn btn-primary">Submit</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

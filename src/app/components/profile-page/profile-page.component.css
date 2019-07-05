@@ -1,0 +1,19 @@
+.profile-page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-page-content {
+    padding-top: 100px;
+}
+
+.card {
+    width: 40%;
+}
+
+.card-img-top {
+    height: 200px;
+}

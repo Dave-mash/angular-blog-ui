@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-blog-ui": {
+    "angular-cars-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-blog-ui",
+            "outputPath": "dist/angular-cars-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-blog-ui:build"
+            "browserTarget": "angular-cars-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-blog-ui:build:production"
+              "browserTarget": "angular-cars-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-blog-ui:build"
+            "browserTarget": "angular-cars-ui:build"
           }
         },
         "test": {
@@ -106,15 +106,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-blog-ui:serve"
+            "devServerTarget": "angular-cars-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-blog-ui:serve:production"
+              "devServerTarget": "angular-cars-ui:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-blog-ui"
+  "defaultProject": "angular-cars-ui"
 }

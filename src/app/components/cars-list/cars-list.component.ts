@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { CarsServiceService } from '../../service/cars-service.service';
 import { ICar } from './car';
 
 @Component({
@@ -6,38 +8,8 @@ import { ICar } from './car';
   styleUrls: ['./cars-list.component.css']
 })
 export class CarsListComponent implements OnInit {
-  cars: ICar[] = [
-    {
-      "make": "Toyota",
-      "model": "Hilux",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      "color": "silver",
-      "condition": "new",
-      "price": 2000000,
-      "rating": 4.2,
-      "thumbnail": "asphalt.jpg"
-    },
-    {
-      "make": "Nissan",
-      "model": "Sunny",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      "color": "black",
-      "condition": "new",
-      "price": 1500000,
-      "rating": 3.5,
-      "thumbnail": "automobile.jpg"
-    },
-    {
-      "make": "Mazda",
-      "model": "Demio",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      "color": "Blue",
-      "condition": "old",
-      "price": 2200000,
-      "rating": 4.0,
-      "thumbnail": "toyota.jpg"
-    }
-  ];
+  cars;
+
   filteredCars: ICar[];
   
   _listFilter: string;
@@ -72,9 +44,7 @@ export class CarsListComponent implements OnInit {
     }
   }
 
-  constructor() {
-    this.filteredCars = this.cars;
-    this.listFilter = '';
+  constructor(private carService: CarsServiceService) {
   }
 
   performFilter(filterBy: string): ICar[] {
@@ -96,6 +66,15 @@ export class CarsListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.listFilter = '';
+    this.carService.getCars()
+    .subscribe(res => {
+      this.cars = res;
+      this.filteredCars = this.cars;
+      console.log(this.filteredCars);
+      console.log(this.filteredCars.length);
+      console.log(this.cars);
+    });
   }
 
 }

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Dave-mash/angular-blog-ui.svg?branch=master)](https://travis-ci.org/Dave-mash/angular-blog-ui)
+[![Build Status](https://travis-ci.org/Dave-mash/angular-cars-ui.svg?branch=master)](https://travis-ci.org/Dave-mash/angular-cars-ui)
 
 ## Angular Blog UI
 
@@ -29,13 +29,13 @@ A simple car classified site with Angular
 3. Clone this repository
 
 ```
-    git clone https://github.com/Dave-mash/angular-blog-ui.git
+    git clone https://github.com/Dave-mash/angular-cars-ui.git
 ```
 
 4. Install dependencies and serve
 
 ```
-    a) cd angular-blog-ui
+    a) cd angular-cars-ui
     b) npm install
     c) ng serve(run `npm test` to test)
 ```

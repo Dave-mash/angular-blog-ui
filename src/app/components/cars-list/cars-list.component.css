@@ -43,4 +43,5 @@ select {
     margin-top: 50px;
     opacity: .6;
     display: none;
+    height: 72vh;
 }

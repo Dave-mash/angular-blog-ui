@@ -1,13 +1,14 @@
 <div>
     <router-outlet></router-outlet>
     <app-nav-bar></app-nav-bar>
-    <div class="cars-list-container" [style.height]="!filteredCars.length ? '72vh' : 'auto'">
+    <div class="cars-list-container">  <!--[style.height]="!filteredCars.length ? '72vh' : 'auto'" -->
         <div class="search-div">
             <span class="search-span">
                 <input type="text" class="form-control" id="car-search" [(ngModel)]="listFilter"
                     placeholder="Search for a car...">
                 <form>
                     <label for="filter-by">Sort By </label>
+
                     <select name="filter-by" id="filter-by" class="form-control form-control-sm" [value]="make"
                         [(ngModel)]="sortBy">
                         <option value="make">Make</option>
@@ -27,7 +28,7 @@
                 <div class="card">
                     <div class="row ">
                         <div class="col-md-6">
-                            <img src="../../../assets/images/{{ car.thumbnail }}" class="w-100">
+                            <img src="../../../assets/images/asphalt.jpg" class="w-100">
                         </div>
                         <div class="col-md-6 px-3">
                             <div class="card-block px-3">

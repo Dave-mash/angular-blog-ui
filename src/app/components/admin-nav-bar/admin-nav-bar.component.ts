@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminNavBarComponent implements OnInit {
   
-  showStyle: false;
+  showStyle: boolean = false;
 
   constructor() { }
 

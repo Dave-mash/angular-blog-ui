@@ -67,13 +67,9 @@ export class CarsListComponent implements OnInit {
 
   ngOnInit() {
     this.listFilter = '';
-    this.carService.getCars()
-    .subscribe(res => {
+    this.carService.getCars().subscribe(res => {
       this.cars = res;
       this.filteredCars = this.cars;
-      console.log(this.filteredCars);
-      console.log(this.filteredCars.length);
-      console.log(this.cars);
     });
   }
 

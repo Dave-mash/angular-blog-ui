@@ -13,6 +13,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
     this.carService.getCars().subscribe(res => {
       // this.cars = res.data;
+      console.log(res);
     });
   }
 

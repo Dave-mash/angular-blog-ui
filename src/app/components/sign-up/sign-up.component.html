@@ -1,56 +1,108 @@
 <div>
-  <router-outlet></router-outlet>
-  <app-nav-bar></app-nav-bar>
-  <div class="signup-container">
-    <form class="simple-login-container">
-      <h2>Sign Up</h2>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="text" class="form-control" placeholder="First Name">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="text" class="form-control" placeholder="Last Name">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="text" class="form-control" placeholder="Username">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="email" class="form-control" placeholder="Email">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="number" class="form-control" placeholder="Phone Number">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="password" placeholder="Enter your Password" class="form-control">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="password" placeholder="Confirm your Password" class="form-control">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="submit" class="btn btn-block btn-login">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12">
-              Already have an account? <a routerLink="/login">Log In</a>
-          </div>
-      </div>
-    </form>
-  </div>
-  <app-footer></app-footer>
+    <router-outlet></router-outlet>
+    <app-nav-bar></app-nav-bar>
+    <div class="signup-container">
+        <!-- <span>{{ error && error }}</span> -->
+        <form [formGroup]="userForm" class="simple-login-container" (ngSubmit)="register()">
+            <h2>Sign Up</h2>
+            <span class="error-span" *ngIf="error">{{ error }}</span><br />
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" placeholder="First Name" formControlName="first-name"
+                        ngModel required>
+                </div>
+                <div *ngIf="userForm.controls['first-name'].invalid && (userForm.controls['first-name'].dirty || userForm.controls['first-name'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="userForm.controls['first-name'].errors.required">
+                        First name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" placeholder="Last Name" formControlName="last-name" ngModel
+                        required>
+                </div>
+                <div *ngIf="userForm.controls['last-name'].invalid && (userForm.controls['last-name'].dirty || userForm.controls['last-name'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="userForm.controls['last-name'].errors.required">
+                        Last name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" placeholder="Username" formControlName="username" ngModel
+                        required minlength="4">
+                </div>
+                <div *ngIf="userForm.controls['username'].invalid && (userForm.controls['last-name'].dirty || userForm.controls['username'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="userForm.controls['username'].errors.required">
+                        Username is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="email" class="form-control" placeholder="Email" formControlName="email" ngModel
+                        required>
+                </div>
+                <div *ngIf="userForm.controls['email'].invalid && (userForm.controls['email'].dirty || userForm.controls['email'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="userForm.controls['email'].errors.required">
+                        Email is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="number" class="form-control" placeholder="Phone Number" formControlName="phone-number"
+                        ngModel required>
+                </div>
+                <div *ngIf="userForm.controls['phone-number'].invalid && (userForm.controls['phone-number'].dirty || userForm.controls['phone-number'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="userForm.controls['phone-number'].errors.required">
+                        Phone number is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="password" placeholder="Enter your Password" class="form-control"
+                        formControlName="password" ngModel required>
+                </div>
+                <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="userForm.controls['password'].errors.required">
+                        Password is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="password" placeholder="Confirm your Password" class="form-control"
+                        formControlName="confirm-password" ngModel required>
+                </div>
+                <div *ngIf="userForm.controls['confirm-password'].invalid && (userForm.controls['confirm-password'].dirty || userForm.controls['confirm-password'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="userForm.controls['confirm-password'].errors.required">
+                        Confirm password is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="submit" class="btn btn-block btn-login"
+                        [disabled]="userForm.pristine || userForm.invalid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    Already have an account? <a routerLink="/login">Log In</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <app-footer></app-footer>
 
 </div>

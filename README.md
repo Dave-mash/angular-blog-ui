@@ -7,7 +7,7 @@ A simple car classified site with Angular
 ### Prerequisites
 
 - Angular 8
-- Nodejs
+- NodeJs
 - any browser
 
 ### Instructions(Linux)

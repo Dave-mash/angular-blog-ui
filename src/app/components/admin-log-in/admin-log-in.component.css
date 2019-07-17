@@ -1,5 +1,5 @@
 .admin-container {
-    height: 72vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,4 +21,8 @@
 
 .simple-login-container .btn-login{
     color: #fff;
+}
+
+.alert-danger {
+    width: 100%;
 }

@@ -2,16 +2,29 @@
   <router-outlet></router-outlet>
   <app-nav-bar></app-nav-bar>
   <div class="admin-container">
-    <form class="simple-login-container">
+    <form [formGroup]="adminLoginForm" class="simple-login-container" (ngSubmit)="login()">
       <h2>Log In</h2>
+      <span class="error-span" *ngIf="error">{{ error }}</span><br />
       <div class="row">
           <div class="col-md-12 form-group">
-              <input type="email" class="form-control" placeholder="Email">
+              <input type="email" class="form-control" formControlName="email" placeholder="Email" ngModel required>
+          </div>
+          <div *ngIf="adminLoginForm.controls['email'].invalid && (adminLoginForm.controls['email'].dirty || adminLoginForm.controls['email'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="adminLoginForm.controls['email'].errors.required">
+                  Email is required.
+              </div>
           </div>
       </div>
       <div class="row">
           <div class="col-md-12 form-group">
-              <input type="password" placeholder="Enter your Password" class="form-control">
+              <input type="password" placeholder="Enter your Password" class="form-control" formControlName="password" ngModel required>
+          </div>
+          <div *ngIf="adminLoginForm.controls['password'].invalid && (adminLoginForm.controls['password'].dirty || adminLoginForm.controls['password'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="adminLoginForm.controls['password'].errors.required">
+                  Password is required.
+              </div>
           </div>
       </div>
       <div class="row">

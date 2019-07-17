@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { ICar } from '../components/cars-list/car';
@@ -10,7 +10,12 @@ import { Observable } from 'rxjs';
 })
 export class CarsServiceService {
 
-  url: string = 'https://car-classified.herokuapp.com/api'; // window.location.hostname === 'localhost' ? 'http://127.0.0.1:8000/api' : 
+  url: string = 'http://127.0.0.1:8000/api'; // window.location.hostname === 'localhost' ? 'https://car-classified.herokuapp.com/api' : 
+  ParseHeaders = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +25,15 @@ export class CarsServiceService {
       .pipe(map(res => res));
   }
 
-  postUser() {
-    return this.http.post(`${this.url}/register`, {})
+  postUser(postObj: {}) {
+    return this.http.post(`${this.url}/register`, postObj, this.ParseHeaders);
+  }
+
+  logInUser(postObj: {}) {
+    return this.http.post(`${this.url}/login`, postObj, this.ParseHeaders);
+  }
+
+  logInAdmin(postObj: {}) {
+    return this.http.post(`${this.url}/admin_login`, postObj, this.ParseHeaders);
   }
 }

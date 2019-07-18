@@ -1,3 +1,32 @@
 .filtered-cars-container {
     padding-top: 100px;
 }
+
+.card-block {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #424141;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.card:hover {
+    opacity: .9;
+}
+
+.no-results {
+    text-align: center;
+    margin-top: 50px;
+    opacity: .6;
+    display: none;
+    height: 72vh;
+}

@@ -2,7 +2,47 @@
   <router-outlet></router-outlet>
   <app-nav-bar></app-nav-bar>
   <div class="filtered-cars-container">
-    filtered-cars works!
+
+    <div class="cars-list" *ngIf='cars && cars.length'>
+      <div class="no-results" [style.display]="!cars.length ? 'block' : 'none'">
+        <h2>No results</h2>
+      </div>
+      <div class="container py-3" *ngFor='let car of cars'>
+        <div class="card">
+          <a href="#" routerLink="/car">
+            <div class="row ">
+              <div class="col-md-6">
+                <img src="../../../assets/images/{{ car.thumbnail }}" class="w-100">
+              </div>
+              <div class="col-md-6 px-3">
+                <div class="card-block px-3">
+                  <span class="car-make">
+                    <h3>{{ car.make }}, {{ car.model }}</h3>
+                  </span>
+                  <span class="description">
+                    <p>{{ car.description }}</p>
+                  </span>
+                  <span class="car-color">
+                    <b>Color: </b>{{ car.color }}
+                  </span>
+                  <span class="car-condition">
+                    <b>Condition: </b>{{ car.condition }}
+                  </span>
+                  <span class="rating">
+                    <b>Rating: </b>{{ car.rating }}
+                  </span>
+                  <span class="car-price">
+                    <b>Price: </b>{{ car.price | currency:'KSH':symbol:'1.2-2' }}
+                  </span><br>
+                  <button class="purchase-car btn btn-primary">Get Car</button>
+                </div>
+              </div>
+
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
   <app-footer></app-footer>
 </div>

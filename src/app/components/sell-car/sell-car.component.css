@@ -24,17 +24,14 @@ select, option {
 }
 
 #submit {
-    width: 40%;
+    width: 25%;
+    font-size: 16px;
 }
 
 .make-top, .make-bottom {
     display: flex;
     padding: 5px;
     justify-content: space-between;
-}
-
-.make-bottom {
-
 }
 
 .make-top-make {

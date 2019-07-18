@@ -36,4 +36,18 @@ export class CarsServiceService {
   logInAdmin(postObj: {}) {
     return this.http.post(`${this.url}/admin_login`, postObj, this.ParseHeaders);
   }
+
+  specifyCarType(make: string): Observable<any[]> {
+    let modelUrl = `https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/${make}?format=json`;
+
+    return this.http.get<any[]>(modelUrl);
+  }
+
+  postCar(postObj: {}, userObj: {}) {
+    if (userObj) {
+      return this.http.post(`${this.url}/car/${userObj['id']}?token=${userObj['token']}`, postObj, this.ParseHeaders);
+    } else {
+      console.log('Invalid vendor Id');
+    }
+  }
 }

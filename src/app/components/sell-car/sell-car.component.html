@@ -2,38 +2,43 @@
   <router-outlet></router-outlet>
   <app-nav-bar></app-nav-bar>
   <div class="sell-container">
-    <form id="make-form">
+    <form id="make-form" [formGroup]="sellCarForm" (ngSubmit)="sellCar()">
+      <h2>Enter car information</h2>
+      <span class="error-span" *ngIf="error">{{ error }}</span><br />
+
       <span class="make-top">
         <span class="make-top-make">
           <label for="option">Make</label>
-          <select name="make-option" id="make-option" class="form-control form-control-sm">
-            <option value="any-make">Any Make</option>
-            <option value="any-make">Toyota</option>
-            <option value="any-make">Subaru</option>
+          <select #make formControlName="make" id="make-option" class="form-control form-control-sm" (blur)="onBlurMake(make.value)">
+            <option value="Toyota">Toyota</option>
+            <option value="Subaru">Subaru</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Ford">Ford</option>
+            <option value="Honda">Honda</option>
+            <option value="Nissan">Nissan</option>
           </select>
         </span>
         <span class="make-top-price">
           <label for="option">Model</label><br>
-          <select name="model" id="model" class="form-control form-control-sm">
-            <option value="used">modelOne</option>
-            <option value="brand-new">modelTwo</option>
+          <select formControlName="model" id="model" class="form-control form-control-sm">
+            <option *ngFor='let model of models' value={{model.Model_Name}}>{{model.Model_Name}}</option>
           </select>
         </span>
       </span>
       <span class="make-bottom">
         <span class="make-bottom-color">
           <label for="color">Color</label><br>
-          <select name="color" id="color" class="form-control form-control-sm">
-            <option value="color">Any Color</option>
+          <select formControlName="color" id="color" class="form-control form-control-sm">
+            <option value="color">Colored</option>
             <option value="blue">Blue</option>
             <option value="silver">Silver</option>
           </select>
         </span>
         <span class="make-bottom-condition">
           <label for="condition">Condition</label><br>
-          <select name="condition" id="condition" class="form-control form-control-sm">
-            <option value="used">Brand New</option>
-            <option value="brand-new">Used</option>
+          <select formControlName="condition" id="condition" class="form-control form-control-sm">
+            <option value="new">Brand New</option>
+            <option value="used">Used</option>
           </select>
         </span>
       </span>
@@ -44,17 +49,30 @@
         </span>
         <span class="make-bottom-condition">
           <label for="condition">Price</label><br>
-          <input type="number" class="form-control" placeholder="Enter Price">
+          <input type="number" formControlName="price" class="form-control" placeholder="Enter Price" ngModel
+            required><br />
+          <div
+            *ngIf="sellCarForm.controls['price'].invalid && (sellCarForm.controls['price'].dirty || sellCarForm.controls['price'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="sellCarForm.controls['price'].errors.required">
+              Price is required.
+            </div>
+          </div>
         </span>
       </span>
-      <textarea
-        name="description"
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        placeholder="Enter Description"
-        rows="3"></textarea>
+      <textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1"
+        placeholder="Enter Description" rows="3" ngModel required>
+      </textarea><br />
+      <div
+        *ngIf="sellCarForm.controls['description'].invalid && (sellCarForm.controls['description'].dirty || sellCarForm.controls['description'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="sellCarForm.controls['description'].errors.required">
+          Description is required.
+        </div>
+      </div>
       <span class="submit-span">
-        <button id="submit" class="btn btn-primary btn-lg">Post Car</button>
+        <button id="submit" class="btn btn-primary btn-lg" [disabled]="sellCarForm.pristine || sellCarForm.invalid">Post
+          Car</button>
       </span>
     </form>
   </div>

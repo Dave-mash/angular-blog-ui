@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
         this.error = '';
         
         // redirect to login page
-        this.router.navigate([`${window.location.origin}/login`], { replaceUrl: true });
+        this.router.navigate([`/login`], { replaceUrl: true });
       }
     });
   }

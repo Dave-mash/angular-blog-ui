@@ -1,44 +1,46 @@
 <div>
-  <router-outlet></router-outlet>
-  <app-nav-bar></app-nav-bar>
-  <div class="login-container">
-    <form [formGroup]="loginForm" class="simple-login-container" (ngSubmit)="login()">
-      <h2>Log In to access your account</h2>
-      <span class="error-span" *ngIf="error">{{ error }}</span><br />
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="email" formControlName="email" class="form-control" placeholder="Email" ngModel required>
-          </div>
-          <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
-              class="alert alert-danger">
-              <div *ngIf="loginForm.controls['email'].errors.required">
-                  Email is required.
-              </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="password" formControlName="password" placeholder="Enter your Password" class="form-control" ngModel required>
-          </div>
-          <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
-              class="alert alert-danger">
-              <div *ngIf="loginForm.controls['password'].errors.required">
-                  Password is required.
-              </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 form-group">
-              <input type="submit" class="btn btn-block btn-login" placeholder="Enter your Password" >
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12">
-              Don't have an account? <a routerLink="/signup">Sign Up</a>
-          </div>
-      </div>
-    </form>
-  </div>
-  <app-footer></app-footer>
+    <router-outlet></router-outlet>
+    <app-nav-bar></app-nav-bar>
+    <div class="login-container">
+        <form [formGroup]="loginForm" class="simple-login-container" (ngSubmit)="login()">
+            <h2>Log In to access your account</h2>
+            <span class="error-span" *ngIf="error">{{ error }}</span><br />
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="email" formControlName="email" class="form-control" placeholder="Email" ngModel
+                        required>
+                </div>
+                <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="loginForm.controls['email'].errors.required">
+                        Email is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="password" formControlName="password" placeholder="Enter your Password"
+                        class="form-control" ngModel required>
+                </div>
+                <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="loginForm.controls['password'].errors.required">
+                        Password is required.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="submit" class="btn btn-block btn-login" placeholder="Enter your Password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    Don't have an account? <a routerLink="/signup">Sign Up</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <app-footer></app-footer>
 
 </div>

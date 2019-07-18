@@ -24,6 +24,7 @@ import { AdminCarsComponent } from './components/admin-cars/admin-cars.component
 import { AdminSoldCarsComponent } from './components/admin-sold-cars/admin-sold-cars.component';
 import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.component';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
+import { FilteredCarsComponent } from './components/filtered-cars/filtered-cars.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProfilePageComponent } from './components/profile-page/profile-page.com
     AdminCarsComponent,
     AdminSoldCarsComponent,
     AdminNavBarComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    FilteredCarsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,7 @@ import { ProfilePageComponent } from './components/profile-page/profile-page.com
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'all-cars', component: CarsListComponent },
-      { path: 'all-cars/:id', component: CarDetailsComponent },
+      { path: 'car', component: CarDetailsComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'about', component: AboutUsComponent },
       { path: 'signup', component: SignUpComponent },

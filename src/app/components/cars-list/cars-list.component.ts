@@ -44,8 +44,7 @@ export class CarsListComponent implements OnInit {
     }
   }
 
-  constructor(private carService: CarsServiceService) {
-  }
+  constructor(private carService: CarsServiceService) { }
 
   performFilter(filterBy: string): ICar[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -70,6 +69,7 @@ export class CarsListComponent implements OnInit {
     this.carService.getCars().subscribe(res => {
       this.cars = res;
       this.filteredCars = this.cars;
+      console.log(this.filteredCars);
     });
   }
 

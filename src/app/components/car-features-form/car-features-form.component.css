@@ -29,10 +29,6 @@ select, option {
     height: 60%;
 }
 
-#submit {
-    width: 40%;
-}
-
 .make-top, .make-bottom {
     display: flex;
     justify-content: center;

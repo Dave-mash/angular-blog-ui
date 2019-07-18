@@ -58,6 +58,7 @@ import { FilteredCarsComponent } from './components/filtered-cars/filtered-cars.
     RouterModule.forRoot([
       { path: 'all-cars', component: CarsListComponent },
       { path: 'car', component: CarDetailsComponent },
+      { path: 'filtered-cars', component: FilteredCarsComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'about', component: AboutUsComponent },
       { path: 'signup', component: SignUpComponent },

@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class CarsServiceService {
 
-  url: string = 'http://127.0.0.1:8000/api'; // window.location.hostname === 'localhost' ? 'https://car-classified.herokuapp.com/api' : 
+  url: string = window.location.hostname === 'localhost' ? 'http://127.0.0.1:8000/api' : 'https://car-classified.herokuapp.com/api';
+  
   ParseHeaders = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

@@ -55,3 +55,9 @@ select {
     display: none;
     height: 72vh;
 }
+
+.loader-gif {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+}

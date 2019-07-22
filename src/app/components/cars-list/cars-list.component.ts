@@ -11,6 +11,7 @@ export class CarsListComponent implements OnInit {
   cars;
 
   filteredCars: ICar[];
+  carsLoaded; // for the loading spinner
   
   _listFilter: string;
   get listFilter(): string {
@@ -66,9 +67,13 @@ export class CarsListComponent implements OnInit {
 
   ngOnInit() {
     this.listFilter = '';
+    this.carsLoaded = false;
     this.carService.getCars().subscribe(res => {
-      this.cars = res;
+      this.cars = res; 
+      // pop a loading spinner
       this.filteredCars = this.cars;
+      // hide the loading spinner
+      this.carsLoaded = true;
       console.log(this.filteredCars);
     });
   }

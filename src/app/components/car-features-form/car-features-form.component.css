@@ -3,12 +3,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../../assets/images/asphalt.jpg");
+    background-image: url("../../../assets/images/giphy.gif");
     background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
-    opacity: .9;
+    background-repeat: repeat;
+    opacity: .8;
     padding-top: 100px;
+}
+
+label {
+    font-weight: bold;
 }
 
 .submit-span {
@@ -26,7 +30,8 @@ select, option {
     display: flex;
     flex-direction: column;
     width: 40%;
-    height: 60%;
+    /* justify-content: center; */
+    height: 100%;
 }
 
 .make-top, .make-bottom {

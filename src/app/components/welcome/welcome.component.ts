@@ -10,7 +10,7 @@ export class WelcomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(JSON.parse(getCookie('user')));
+    getCookie('user') && console.log(JSON.parse(getCookie('user')));
   }
 
 }

@@ -1,34 +1,42 @@
 <div class="features-section">
-  <form id="make-form">
+  <form id="make-form" [formGroup]="searchCarForm" (ngSubmit)="searchCar()">
     <span class="make-top">
       <span class="make-top-make">
         <label for="option">Make</label>
-        <select name="make-option" id="make-option" class="form-control form-control-sm">
-          <option value="any-make">Any Make</option>
-          <option value="any-make">Toyota</option>
-          <option value="any-make">Subaru</option>
+        <select
+          #make
+          formControlName="make"
+          id="make-option"
+          class="form-control form-control-sm"
+          (blur)="onBlurMake(make.value)">
+          <option value="Toyota">Toyota</option>
+          <option value="Subaru">Subaru</option>
+          <option value="Mazda">Mazda</option>
+          <option value="Ford">Ford</option>
+          <option value="Honda">Honda</option>
+          <option value="Nissan">Nissan</option>
+        </select>
+      </span>
+      <span class="make-top-make">
+        <label for="option">Model</label>
+        <select formControlName="model" id="make-option" class="form-control form-control-sm">
+          <option *ngFor='let model of models' value={{model.Model_Name}}>{{model.Model_Name}}</option>
         </select>
       </span>
       <span class="make-top-price">
         <label for="option">Price</label><br>
         <span class="make-top-select">
-          <select name="min-price" id="min-price" class="form-control form-control-sm">
-            <option value="min-price">Min</option>
-            <option value="one-mil">ksh.1,000,000</option>
-            <option value="two-mil">ksh.2,000,000</option>
-          </select>
-          <select name="max-price" id="max-price" class="form-control form-control-sm">
-            <option value="max-price">Max</option>
-            <option value="one-mil">ksh.1,000,000</option>
-            <option value="two-mil">ksh.2,000,000</option>
-          </select>
+          <input type="number" placeholder="Min" class="form-control" formControlName="min" ngModel
+          required/>
+          <input type="number" placeholder="Max" class="form-control" formControlName="max" ngModel
+          required/>
         </span>
       </span>
     </span>
     <span class="make-bottom">
       <span class="make-bottom-color">
         <label for="color">Color</label><br>
-        <select name="color" id="color" class="form-control form-control-sm">
+        <select formControlName="color" id="color" class="form-control form-control-sm">
           <option value="color">Any Color</option>
           <option value="blue">Blue</option>
           <option value="silver">Silver</option>
@@ -36,7 +44,7 @@
       </span>
       <span class="make-bottom-condition">
         <label for="condition">Condition</label><br>
-        <select name="condition" id="condition" class="form-control form-control-sm">
+        <select formControlName="condition" id="condition" class="form-control form-control-sm">
           <option value="used">Brand New</option>
           <option value="brand-new">Used</option>
         </select>

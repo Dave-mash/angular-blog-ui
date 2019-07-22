@@ -56,3 +56,7 @@ select, option {
 .make-top-make, .make-top-price, .make-bottom-color, .make-bottom-condition {
     width: 50%;
 }
+
+input, select {
+    border: 1px solid #c2c1c1;
+}

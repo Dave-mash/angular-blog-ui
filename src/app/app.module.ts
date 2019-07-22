@@ -11,7 +11,6 @@ import { CarsListComponent } from './components/cars-list/cars-list.component';
 import { CarFeaturesFormComponent } from './components/car-features-form/car-features-form.component';
 import { CarSliderComponent } from './components/car-slider/car-slider.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
@@ -34,7 +33,6 @@ import { FilteredCarsComponent } from './components/filtered-cars/filtered-cars.
     CarFeaturesFormComponent,
     CarSliderComponent,
     FooterComponent,
-    CarDetailsComponent,
     WelcomeComponent,
     PageNotFoundComponent,
     AboutUsComponent,
@@ -57,7 +55,6 @@ import { FilteredCarsComponent } from './components/filtered-cars/filtered-cars.
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: 'all-cars', component: CarsListComponent },
-      { path: 'car', component: CarDetailsComponent },
       { path: 'filtered-cars', component: FilteredCarsComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'about', component: AboutUsComponent },

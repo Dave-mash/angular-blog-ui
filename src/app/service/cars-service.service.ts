@@ -32,6 +32,12 @@ export class CarsServiceService {
       .pipe(map(res => res));
   }
 
+  getFilteredCars(specs) {
+    return this.http
+      .get<ICar[]>(`${this.url}/filter-cars`, specs)
+      .pipe(map(res => res));
+  }
+
   postUser(postObj: {}) {
     return this.http.post(`${this.url}/register`, postObj, this.ParseHeaders);
   }

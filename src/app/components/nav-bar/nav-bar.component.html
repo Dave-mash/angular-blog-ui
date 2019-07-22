@@ -32,6 +32,9 @@
                     <a class="nav-link" routerLink="/logout" *ngIf="!!loggedUser">Logout</a>
                 </li>
                 <li class="nav-item">
+                    <img class="nav-link img" routerLink="/cart" *ngIf="!!loggedUser" src="../../../assets/images/shopping-cart.svg" />
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/signup" *ngIf="!loggedUser">Signup</a>
                 </li>
                 <li class="nav-item">

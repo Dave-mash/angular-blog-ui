@@ -26,6 +26,12 @@ export class CarsServiceService {
       .pipe(map(res => res));
   }
 
+  getSingleCar(id): Observable<ICar[]> {
+    return this.http
+      .get<ICar[]>(`${this.url}/car/${id}`)
+      .pipe(map(res => res));
+  }
+
   postUser(postObj: {}) {
     return this.http.post(`${this.url}/register`, postObj, this.ParseHeaders);
   }

@@ -22,49 +22,104 @@
             </span>
         </div>
         <div class="cars-list">
-            <div class="no-results" [style.display]="!filteredCars.length ? 'block' : 'none'">
-                <h2>No results</h2>
+            <div *ngIf="!!filteredCars">
+                <div class="no-results" [style.display]="!filteredCars.length ? 'block' : 'none'">
+                    <h2>No results</h2>
+                </div>
             </div>
             <div class="loader-gif" [style.display]="!carsLoaded ? 'flex' : 'none'">
                 <img src="../../../assets/images/spinner.svg" id="loading-spinner" />
             </div>
             <div class="container py-3" *ngFor='let car of filteredCars'>
                 <div class="card">
-                    <a href="#" routerLink="/car">
-                        <div class="row ">
-                            <div class="col-md-6">
-                                <img src="../../../assets/images/asphalt.jpg" class="w-100">
-                            </div>
-                            <div class="col-md-6 px-3">
-                                <div class="card-block px-3">
-                                    <span class="car-make">
-                                        <h3>{{ car.make }}, {{ car.model }}</h3>
-                                    </span>
-                                    <span class="description">
-                                        <p>{{ car.description }}</p>
-                                    </span>
-                                    <span class="car-color">
-                                        <b>Color: </b>{{ car.color }}
-                                    </span>
-                                    <span class="car-condition">
-                                        <b>Condition: </b>{{ car.condition }}
-                                    </span>
-                                    <span class="rating">
-                                        <b>Rating: </b>{{ car.rating }}
-                                    </span>
-                                    <span class="car-price">
-                                        <b>Price: </b>{{ car.price | currency:'KSH':symbol:'1.2-2' }}
-                                    </span><br>
-                                    <button class="purchase-car btn btn-primary">Get Car</button>
-                                </div>
-                            </div>
-
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <img src="../../../assets/images/asphalt.jpg" class="w-100">
                         </div>
-                    </a>
+                        <div class="col-md-6 px-3">
+                            <div class="card-block px-3">
+                                <span class="car-make">
+                                    <h3>{{ car.make }}, {{ car.model }}</h3>
+                                </span>
+                                <span class="description">
+                                    <p>{{ car.description }}</p>
+                                </span>
+                                <span class="car-color">
+                                    <b>Color: </b>{{ car.color }}
+                                </span>
+                                <span class="car-condition">
+                                    <b>Condition: </b>{{ car.condition }}
+                                </span>
+                                <span class="rating">
+                                    <b>Rating: </b>{{ car.rating }}
+                                </span>
+                                <span class="car-price">
+                                    <b>Price: </b>{{ car.price | currency:'KSH':symbol:'1.2-2' }}
+                                </span><br>
+                                <button #el class="purchase-car btn btn-primary" data-toggle="modal"
+                                    data-target=".bd-example-modal-lg" [attr.data-id]="car.id"
+                                    (click)="addToCart(el)">Get Car
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <app-footer></app-footer>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" *ngIf="carObj">{{ carObj.make }}, {{ carObj.model }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="loader-gif-car" [style.display]="!carLoaded ? 'flex' : 'none'">
+                        <img src="../../../assets/images/spinner.svg" id="loading-spinner" />
+                    </div>
+                    <div class="card">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <img src="../../../assets/images/asphalt.jpg" class="w-100">
+                            </div>
+                            <div class="col-md-6 px-3" *ngIf="carObj">
+                                <div class="card-block px-3">
+                                    <span class="car-make">
+                                        <h3>{{ carObj.make }}, {{ carObj.model }}</h3>
+                                    </span>
+                                    <span class="description">
+                                        <p>{{ carObj.description }}</p>
+                                    </span>
+                                    <span class="car-color">
+                                        <b>Color: </b>{{ carObj.color }}
+                                    </span>
+                                    <span class="car-condition">
+                                        <b>Condition: </b>{{ carObj.condition }}
+                                    </span>
+                                    <span class="rating">
+                                        <b>Rating: </b>{{ carObj.rating }}
+                                    </span>
+                                    <span class="car-price">
+                                        <b>Price: </b>{{ carObj.price | currency:'KSH':symbol:'1.2-2' }}
+                                    </span><br>
+                                </div>
+                            </div>
 
-</div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>
+
+    </div>

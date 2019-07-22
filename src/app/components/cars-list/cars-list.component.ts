@@ -9,10 +9,12 @@ import { ICar } from './car';
 })
 export class CarsListComponent implements OnInit {
   cars;
+  carObj;
 
   filteredCars: ICar[];
   carsLoaded; // for the loading spinner
-  
+  carLoaded; // for the loading spinner
+
   _listFilter: string;
   get listFilter(): string {
     return this._listFilter;
@@ -21,7 +23,9 @@ export class CarsListComponent implements OnInit {
   set listFilter(value: string) {
     this._listFilter = value;
     this.filteredCars = this.listFilter ? this.performFilter(this.listFilter) : this.cars;
-    if (!this.filteredCars) console.log('empty');
+    if (!this.filteredCars) {
+      console.log('empty');
+    };
   }
 
   set sortBy(value: string) {
@@ -31,7 +35,7 @@ export class CarsListComponent implements OnInit {
         this.sortByLetters(this.cars, 'make');
         break;
       case 'model':
-        this.sortByLetters(this.cars, 'model');        
+        this.sortByLetters(this.cars, 'model');
         break;
       case 'max-price':
         this.cars.sort((a, b) => b.price - a.price);
@@ -49,7 +53,7 @@ export class CarsListComponent implements OnInit {
 
   performFilter(filterBy: string): ICar[] {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.cars.filter((car: ICar) => 
+    return this.cars.filter((car: ICar) =>
       car.make.toLocaleLowerCase().indexOf(filterBy) !== -1
     );
   }
@@ -60,8 +64,23 @@ export class CarsListComponent implements OnInit {
       let nameB = value === 'make' ? b.make.toUpperCase() : b.model.toUpperCase();
       if (nameA < nameB) return -1;
       if (nameA > nameB) return 1;
-    
+
       return 0;
+    });
+  }
+
+  addToCart(el) {
+    // console.log(el.getAttribute('data-id'));
+    let id = el.getAttribute('data-id');
+    //console.log(this.carId);
+    // pop a loading spinner
+    this.carLoaded = false;
+
+    this.carService.getSingleCar(id).subscribe(res => {
+      this.carObj = res['car'];
+      // hide the loading spinner
+      this.carLoaded = true;
+      console.log(this.carObj);
     });
   }
 
@@ -69,7 +88,7 @@ export class CarsListComponent implements OnInit {
     this.listFilter = '';
     this.carsLoaded = false;
     this.carService.getCars().subscribe(res => {
-      this.cars = res; 
+      this.cars = res;
       // pop a loading spinner
       this.filteredCars = this.cars;
       // hide the loading spinner
